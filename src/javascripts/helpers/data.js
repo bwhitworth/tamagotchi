@@ -1,5 +1,6 @@
 const pet = {
   full: 100,
+  play: 50,
 };
 
 const scorePrinter = (quadDiv, scoreToPrint) => {
@@ -16,6 +17,16 @@ const feedJunkFood = () => {
   scorePrinter('eat-score-container', pet.full);
 };
 
+const superFunActivity = () => {
+  if (pet.play <= 50) { pet.play += 50; } else { pet.play = 100; }
+  scorePrinter('play-score-container', pet.play);
+};
+
+const sortaFunActivity = () => {
+  if (pet.play <= 98) { pet.play += 2; } else { pet.play = 100; }
+  scorePrinter('play-score-container', pet.play);
+};
+
 export default {
-  pet, feedHealthyFood, feedJunkFood, scorePrinter,
+  pet, feedHealthyFood, feedJunkFood, scorePrinter, superFunActivity, sortaFunActivity,
 };
