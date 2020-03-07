@@ -1,6 +1,7 @@
 const pet = {
   full: 100,
   play: 50,
+  strength: 100,
 };
 
 const scorePrinter = (quadDiv, scoreToPrint) => {
@@ -27,6 +28,16 @@ const sortaFunActivity = () => {
   scorePrinter('play-score-container', pet.play);
 };
 
+const runAway = () => {
+  if (pet.strength >= 1) { pet.strength -= 1; } else { pet.strength = 0; }
+  scorePrinter('fight-score-container', pet.strength);
+};
+
+const beViolent = () => {
+  if (pet.strength >= 10) { pet.strength -= 10; } else { pet.strength = 0; }
+  scorePrinter('fight-score-container', pet.strength);
+};
+
 export default {
-  pet, feedHealthyFood, feedJunkFood, scorePrinter, superFunActivity, sortaFunActivity,
+  pet, feedHealthyFood, feedJunkFood, scorePrinter, superFunActivity, sortaFunActivity, runAway, beViolent,
 };
