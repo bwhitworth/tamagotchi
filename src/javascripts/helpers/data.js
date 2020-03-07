@@ -1,8 +1,17 @@
 const pet = {
-  full: 100,
+  full: 80,
   fun: 50,
   strength: 100,
   energy: 50,
+};
+
+const getStat = (stat) => {
+  const val = stat;
+  return pet[val];
+};
+
+const setStat = (stat, newValue) => {
+  pet[stat] = newValue;
 };
 
 const scorePrinter = (quadDiv, scoreToPrint) => {
@@ -10,8 +19,10 @@ const scorePrinter = (quadDiv, scoreToPrint) => {
 };
 
 const feedHealthyFood = () => {
-  if (pet.full <= 90) { pet.full += 10; } else { pet.full = 100; }
-  scorePrinter('eat-score-container', pet.full);
+  const fullScore = getStat('full');
+  if (fullScore <= 90) { setStat(fullScore + 10); } else { setStat(100); }
+  scorePrinter('eat-score-container', fullScore);
+  console.error(fullScore);
 };
 
 const feedJunkFood = () => {
@@ -50,5 +61,5 @@ const deepSlumber = () => {
 };
 
 export default {
-  pet, feedHealthyFood, feedJunkFood, scorePrinter, superFunActivity, sortaFunActivity, runAway, beViolent, catNap, deepSlumber,
+  pet, getStat, feedHealthyFood, feedJunkFood, scorePrinter, superFunActivity, sortaFunActivity, runAway, beViolent, catNap, deepSlumber,
 };
