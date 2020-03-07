@@ -9,7 +9,7 @@ const playQuadPrinter = () => {
   domString += '<button id="sorta-fun-btn">Sorta Fun</button>';
 
   utils.printToDom('play', domString);
-  data.scorePrinter('play-score-container', data.pet.play);
+  data.scorePrinter('play-score-container', data.pet.fun);
   $('#super-fun-btn').click(data.superFunActivity);
   $('#sorta-fun-btn').click(data.sortaFunActivity);
 };

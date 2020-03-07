@@ -1,7 +1,8 @@
 const pet = {
   full: 100,
-  play: 50,
+  fun: 50,
   strength: 100,
+  energy: 50,
 };
 
 const scorePrinter = (quadDiv, scoreToPrint) => {
@@ -19,13 +20,13 @@ const feedJunkFood = () => {
 };
 
 const superFunActivity = () => {
-  if (pet.play <= 50) { pet.play += 50; } else { pet.play = 100; }
-  scorePrinter('play-score-container', pet.play);
+  if (pet.fun <= 50) { pet.fun += 50; } else { pet.fun = 100; }
+  scorePrinter('play-score-container', pet.fun);
 };
 
 const sortaFunActivity = () => {
-  if (pet.play <= 98) { pet.play += 2; } else { pet.play = 100; }
-  scorePrinter('play-score-container', pet.play);
+  if (pet.fun <= 98) { pet.fun += 2; } else { pet.fun = 100; }
+  scorePrinter('play-score-container', pet.fun);
 };
 
 const runAway = () => {
@@ -38,6 +39,16 @@ const beViolent = () => {
   scorePrinter('fight-score-container', pet.strength);
 };
 
+const catNap = () => {
+  if (pet.energy <= 50) { pet.energy += 50; } else { pet.energy = 100; }
+  scorePrinter('sleep-score-container', pet.energy);
+};
+
+const deepSlumber = () => {
+  if (pet.energy <= 40) { pet.energy += 60; } else { pet.energy = 100; }
+  scorePrinter('sleep-score-container', pet.energy);
+};
+
 export default {
-  pet, feedHealthyFood, feedJunkFood, scorePrinter, superFunActivity, sortaFunActivity, runAway, beViolent,
+  pet, feedHealthyFood, feedJunkFood, scorePrinter, superFunActivity, sortaFunActivity, runAway, beViolent, catNap, deepSlumber,
 };
