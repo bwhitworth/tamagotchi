@@ -1,6 +1,20 @@
 import utils from '../helpers/utils';
 import data from '../helpers/data';
 
+const runAway = () => {
+  let strengthScore = data.getStat('strength');
+  if (strengthScore >= 3) { data.subStat('strength', 3); } else { data.setStat('strength', 0); }
+  strengthScore = data.getStat('strength');
+  data.scorePrinter('fight-score-container', strengthScore);
+};
+
+const beViolent = () => {
+  let strengthScore = data.getStat('strength');
+  if (strengthScore >= 10) { data.subStat('strength', 20); } else { data.setStat('strength', 0); }
+  strengthScore = data.getStat('strength');
+  data.scorePrinter('fight-score-container', strengthScore);
+};
+
 const fightQuadPrinter = () => {
   let domString = '';
   domString += '<h2>FIGHT</h2>';
@@ -10,8 +24,8 @@ const fightQuadPrinter = () => {
 
   utils.printToDom('fight', domString);
   data.scorePrinter('fight-score-container', data.pet.strength);
-  $('#run-away-btn').click(data.runAway);
-  $('#be-violent-btn').click(data.beViolent);
+  $('#run-away-btn').click(runAway);
+  $('#be-violent-btn').click(beViolent);
 };
 
 export default { fightQuadPrinter };

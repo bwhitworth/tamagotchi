@@ -26,13 +26,15 @@ body {
 }
 
 .quad {
-  width: 40%;
-  margin: 20px;
-  padding: 10px;
-}
-
-h2 {
-  justify-self: center;
+  width: 46%;
+  margin: 2%;
+  border-radius: 20px;
+  h2{
+    text-align: center;
+  }
+  div {
+    text-align: center;
+  }
 }
 
 #eat {

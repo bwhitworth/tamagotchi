@@ -2,18 +2,17 @@ import utils from '../helpers/utils';
 import data from '../helpers/data';
 
 const feedHealthyFood = () => {
-  const fullScore = data.getStat('full');
-  console.error('get:', fullScore);
-  if (fullScore <= 90) { console.error(data.addStat('full', 10)); } else { console.error('is >90:', fullScore); data.setStat('full', 100); }
+  let fullScore = data.getStat('full');
+  if (fullScore <= 90) { data.addStat('full', 10); } else { data.setStat('full', 100); }
+  fullScore = data.getStat('full');
   data.scorePrinter('eat-score-container', fullScore);
-  console.error('final:', fullScore);
 };
 
 const feedJunkFood = () => {
-  const fullScore = data.getStat('full');
-  if (fullScore >= 3) { data.subStat('full', 3); } else { data.subStat('full', 0); }
+  let fullScore = data.getStat('full');
+  if (fullScore >= 3) { data.subStat('full', 3); } else { data.setStat('full', 0); }
+  fullScore = data.getStat('full');
   data.scorePrinter('eat-score-container', fullScore);
-  console.error(fullScore);
 };
 
 const eatQuadPrinter = () => {
