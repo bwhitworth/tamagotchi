@@ -10,9 +10,10 @@ const getProgress = () => {
 };
 
 const progressPrinter = () => {
+  const overallScore = getProgress();
   let domString = '';
   domString += '<h2>OVERALL HEALTH: </h2>';
-  domString += `<p>${getProgress()}</p>`;
+  domString += `<progress value="${overallScore}" max="100">${overallScore}</progress>`;
   utils.printToDom('progress', domString);
 };
 
