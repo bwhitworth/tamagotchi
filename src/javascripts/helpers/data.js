@@ -6,12 +6,23 @@ const pet = {
 };
 
 const getStat = (stat) => {
-  const val = stat;
-  return pet[val];
+  const keyValue = stat;
+  return pet[keyValue];
 };
 
 const setStat = (stat, newValue) => {
-  pet[stat] = newValue;
+  const keyValue = stat;
+  pet[keyValue] = newValue;
+};
+
+const addStat = (stat, addValue) => {
+  const keyValue = stat;
+  pet[keyValue] += addValue;
+};
+
+const subStat = (stat, subValue) => {
+  const keyValue = stat;
+  pet[keyValue] -= subValue;
 };
 
 const scorePrinter = (quadDiv, scoreToPrint) => {
@@ -20,14 +31,17 @@ const scorePrinter = (quadDiv, scoreToPrint) => {
 
 const feedHealthyFood = () => {
   const fullScore = getStat('full');
-  if (fullScore <= 90) { setStat(fullScore + 10); } else { setStat(100); }
+  console.error('get:', fullScore);
+  if (fullScore <= 90) { console.error(addStat('full', 10)); } else { console.error('is >90:', fullScore); setStat('full', 100); }
   scorePrinter('eat-score-container', fullScore);
   console.error(fullScore);
 };
 
 const feedJunkFood = () => {
-  if (pet.full >= 3) { pet.full -= 3; } else { pet.full = 0; }
-  scorePrinter('eat-score-container', pet.full);
+  const fullScore = getStat('full');
+  if (fullScore >= 3) { subStat('full', 3); } else { subStat('full', 0); }
+  scorePrinter('eat-score-container', fullScore);
+  console.error(fullScore);
 };
 
 const superFunActivity = () => {
