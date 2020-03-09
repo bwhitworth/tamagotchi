@@ -17,4 +17,4 @@ const progressPrinter = () => {
   utils.printToDom('progress', domString);
 };
 
-export default { getProgress, progressPrinter };
+export default { progressPrinter };

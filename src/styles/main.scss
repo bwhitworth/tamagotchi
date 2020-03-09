@@ -68,3 +68,12 @@ body {
     @include button-style($lightGreen)
   }
 }
+
+#pet {
+  width: 100%;
+  text-align: center;
+  img {
+    height: 250px;
+    overflow: hidden;
+  }
+}
