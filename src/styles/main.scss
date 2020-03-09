@@ -1,10 +1,66 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
+$pink: #DB93B0;
+$darkOrange: #F0B7A4;
+$lightOrange: #FFD3B6;
+$lightGreen: #DCEDC1;
+$darkGreen: #A8E6CF;
+
 body {
-  background-color: #DB93B0;
+  background-color: $pink;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin button-style($color){
+  background-color: darken($color , $amount: 15%);
+  border-color: black;
+  width: 40%;
+  margin: 5%;
+  padding: 5px;
+  :focus { outline: none;}
 }
 
 .quad {
-  background-color: lightblue;
-  width: 50%;
+  width: 46%;
+  margin: 2%;
+  border-radius: 20px;
+  h2{
+    text-align: center;
+  }
+  div {
+    text-align: center;
+  }
+}
+
+#eat {
+  background-color: $darkOrange;
+  button{
+    @include button-style($darkOrange)
+  }
+}
+
+#play {
+  background-color: $lightOrange;
+  button{
+    @include button-style($lightOrange)
+  }
+}
+
+#fight {
+  background-color: $darkGreen;
+  button{
+    @include button-style($darkGreen)
+  }
+}
+
+#sleep {
+  background-color: $lightGreen;
+  button{
+    @include button-style($lightGreen)
+  }
 }
