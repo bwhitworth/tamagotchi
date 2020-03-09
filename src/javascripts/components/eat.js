@@ -1,11 +1,13 @@
 import utils from '../helpers/utils';
 import data from '../helpers/data';
+import progress from './progress';
 
 const feedHealthyFood = () => {
   let fullScore = data.getStat('full');
   if (fullScore <= 90) { data.addStat('full', 10); } else { data.setStat('full', 100); }
   fullScore = data.getStat('full');
   data.scorePrinter('eat-score-container', fullScore);
+  progress.progressPrinter();
 };
 
 const feedJunkFood = () => {
@@ -13,6 +15,7 @@ const feedJunkFood = () => {
   if (fullScore >= 3) { data.subStat('full', 3); } else { data.setStat('full', 0); }
   fullScore = data.getStat('full');
   data.scorePrinter('eat-score-container', fullScore);
+  progress.progressPrinter();
 };
 
 const eatQuadPrinter = () => {

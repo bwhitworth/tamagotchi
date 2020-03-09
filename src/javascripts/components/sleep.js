@@ -1,11 +1,13 @@
 import utils from '../helpers/utils';
 import data from '../helpers/data';
+import progress from './progress';
 
 const catNap = () => {
   let energyScore = data.getStat('energy');
   if (energyScore <= 50) { data.addStat('energy', 50); } else { data.setStat('energy', 100); }
   energyScore = data.getStat('energy');
   data.scorePrinter('sleep-score-container', energyScore);
+  progress.progressPrinter();
 };
 
 const deepSlumber = () => {
@@ -13,6 +15,7 @@ const deepSlumber = () => {
   if (energyScore <= 40) { data.addStat('energy', 60); } else { data.setStat('energy', 100); }
   energyScore = data.getStat('energy');
   data.scorePrinter('sleep-score-container', energyScore);
+  progress.progressPrinter();
 };
 
 const sleepQuadPrinter = () => {

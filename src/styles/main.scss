@@ -24,6 +24,10 @@ body {
   padding: 5px;
   :focus { outline: none;}
 }
+#progress {
+  width: 100%;
+  text-align: center;
+}
 
 .quad {
   width: 46%;

@@ -1,12 +1,13 @@
 import utils from '../helpers/utils';
 import data from '../helpers/data';
-
+import progress from './progress';
 
 const superFunActivity = () => {
   let funScore = data.getStat('fun');
   if (funScore <= 50) { data.addStat('fun', 50); } else { data.setStat('fun', 100); }
   funScore = data.getStat('fun');
   data.scorePrinter('play-score-container', funScore);
+  progress.progressPrinter();
 };
 
 const sortaFunActivity = () => {
@@ -14,6 +15,7 @@ const sortaFunActivity = () => {
   if (funScore <= 98) { data.addStat('fun', 2); } else { data.setStat('fun', 100); }
   funScore = data.getStat('fun');
   data.scorePrinter('play-score-container', funScore);
+  progress.progressPrinter();
 };
 
 const playQuadPrinter = () => {
