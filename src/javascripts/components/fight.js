@@ -1,11 +1,13 @@
 import utils from '../helpers/utils';
 import data from '../helpers/data';
+import progress from './progress';
 
 const runAway = () => {
   let strengthScore = data.getStat('strength');
   if (strengthScore >= 3) { data.subStat('strength', 3); } else { data.setStat('strength', 0); }
   strengthScore = data.getStat('strength');
   data.scorePrinter('fight-score-container', strengthScore);
+  progress.progressPrinter();
 };
 
 const beViolent = () => {
@@ -13,6 +15,7 @@ const beViolent = () => {
   if (strengthScore >= 10) { data.subStat('strength', 20); } else { data.setStat('strength', 0); }
   strengthScore = data.getStat('strength');
   data.scorePrinter('fight-score-container', strengthScore);
+  progress.progressPrinter();
 };
 
 const fightQuadPrinter = () => {
