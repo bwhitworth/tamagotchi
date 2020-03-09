@@ -29,21 +29,6 @@ const scorePrinter = (quadDiv, scoreToPrint) => {
   $(`#${quadDiv}`).html(`<h3>${scoreToPrint}</h3>`);
 };
 
-const feedHealthyFood = () => {
-  const fullScore = getStat('full');
-  console.error('get:', fullScore);
-  if (fullScore <= 90) { console.error(addStat('full', 10)); } else { console.error('is >90:', fullScore); setStat('full', 100); }
-  scorePrinter('eat-score-container', fullScore);
-  console.error(fullScore);
-};
-
-const feedJunkFood = () => {
-  const fullScore = getStat('full');
-  if (fullScore >= 3) { subStat('full', 3); } else { subStat('full', 0); }
-  scorePrinter('eat-score-container', fullScore);
-  console.error(fullScore);
-};
-
 const superFunActivity = () => {
   if (pet.fun <= 50) { pet.fun += 50; } else { pet.fun = 100; }
   scorePrinter('play-score-container', pet.fun);
@@ -75,5 +60,5 @@ const deepSlumber = () => {
 };
 
 export default {
-  pet, getStat, feedHealthyFood, feedJunkFood, scorePrinter, superFunActivity, sortaFunActivity, runAway, beViolent, catNap, deepSlumber,
+  pet, getStat, setStat, addStat, subStat, scorePrinter, superFunActivity, sortaFunActivity, runAway, beViolent, catNap, deepSlumber,
 };
